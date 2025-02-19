@@ -73,7 +73,6 @@
     /gate/source/AS5/gps/shape Sphere
     /gate/source/AS5/gps/radius 1.4 cm
     /gate/source/AS5/attachTo MIS28
-    /gate/source/AS5/setActivity 0.4713 MBq 
     /gate/source/AS5/setActivity 2000 kBq
 
 # SPHERE 6, DIAMETER 37 MM
