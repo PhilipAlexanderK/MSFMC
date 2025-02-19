@@ -1,0 +1,29 @@
+# Adder
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/insert adder
+
+# Readout
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/insert readout
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/readout/setPolicy TakeEnergyWinner
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/readout/setDepth 2
+
+# Energy resolution
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/insert energyResolution
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/energyResolution/fwhm 0.0985
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/energyResolution/energyOfReference 511. keV
+
+# QE
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/insert efficiency
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/efficiency/setUniqueEfficiency 1
+
+# Energy discriminators
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/insert energyFraming
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/energyFraming/setMin 435. keV
+/gate/digitizerMgr/PETcrystal/SinglesDigitizer/Singles/energyFraming/setMax 580. keV
+
+
+# Coincidence logic
+/gate/digitizerMgr/CoincidenceSorter/Coincidences/setInputCollection Singles
+/gate/digitizerMgr/CoincidenceSorter/Coincidences/setWindow 3.4650 ns
+/gate/digitizerMgr/CoincidenceSorter/Coincidences/minSectorDifference 4
+/gate/digitizerMgr/CoincidenceSorter/Coincidences/allDigiOpenCoincGate true
+/gate/digitizerMgr/CoincidenceSorter/Coincidences/MultiplesPolicy takeAllGoods
