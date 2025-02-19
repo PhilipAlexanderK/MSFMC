@@ -1,0 +1,42 @@
+################################################
+####                                        ####
+#                                              #
+#             Generic GATE PET-scanner         #
+#             @Philip Kalaitizidis             #
+#                                              #
+####                                        ####
+################################################
+
+/gate/geometry/setMaterialDatabase data/GateMaterials.db
+
+# Define top-hierarcy level volume.
+/gate/world/geometry/setXLength 100 cm
+/gate/world/geometry/setYLength 100 cm
+/gate/world/geometry/setZLength 100 cm
+
+# Visualization
+
+# Define PET geometry.
+
+# Define the physics and cuts.
+
+# Define actors.
+
+# Define 
+
+# --- Initialize --- 
+#   Triggers Geant4 to compute crossections
+/gate/run/initialize
+
+# Define digitizer
+
+# Define source
+
+# Define output
+
+/gate/application/setTimeSlice 1 s
+/gate/application/setTimeStart 0 s
+/gate/application/setTimeStop  1 s
+
+/gate/application/startDAQ
+
