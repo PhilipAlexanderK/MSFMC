@@ -10,9 +10,9 @@
 /gate/source/wcc_src/gps/angtype iso
 /gate/source/wcc_src/gps/type Volume
 /gate/source/wcc_src/gps/shape Cylinder
-/gate/source/wcc_src/gps/radius 10 cm
-/gate/source/wcc_src/gps/halfz 10 cm
+/gate/source/wcc_src/gps/radius 9.75 cm
+/gate/source/wcc_src/gps/halfz 9.125 cm
 /gate/source/wcc_src/setActivity 5 MBq
 
-/gate/source/wcc_src/gps/centre 0.0 0.0 0.0 cm
+/gate/source/wcc_src/gps/attachTo WCC_CONT
 /gate/source/list
