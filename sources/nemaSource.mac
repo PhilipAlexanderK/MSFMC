@@ -1,7 +1,6 @@
 # ACTIVITY OF THE SPHERES
 
-  # SPHERE 1, DIAMETER: 10 MM (AS1)
-    # Ion source simulation?
+# SPHERE 1, DIAMETER: 10 MM
     /gate/source/addSource AS1
     /gate/source/AS1/gps/particle ion
     /gate/source/AS1/gps/ion 31 68 0 0
@@ -14,10 +13,9 @@
     /gate/source/AS1/gps/shape Sphere
     /gate/source/AS1/gps/radius 0.5 cm
     /gate/source/AS1/attachTo MIS10
-    /gate/source/AS1/setActivity 0.01 kBq
-  
-  
-  # Ion source simulation?
+    /gate/source/AS1/setActivity 10 kBq
+
+# SPHERE 2, DIAMETER: 13 MM
     /gate/source/addSource AS2
     /gate/source/AS2/gps/particle ion
     /gate/source/AS2/gps/ion 31 68 0 0
@@ -30,10 +28,9 @@
     /gate/source/AS2/gps/shape Sphere
     /gate/source/AS2/gps/radius 0.65 cm
     /gate/source/AS2/attachTo MIS13
-    /gate/source/AS2/setActivity 0.01 kBq
+    /gate/source/AS2/setActivity 100 kBq
 
-
-  # Ion source simulation?
+# SPHERE 3, DIAMETER: 17 MM
     /gate/source/addSource AS3
     /gate/source/AS3/gps/particle ion
     /gate/source/AS3/gps/ion 31 68 0 0
@@ -46,10 +43,9 @@
     /gate/source/AS3/gps/shape Sphere
     /gate/source/AS3/gps/radius 0.85 cm
     /gate/source/AS3/attachTo MIS17
-    /gate/source/AS3/setActivity 0.01 kBq
+    /gate/source/AS3/setActivity 500 kBq
 
-
-  # Ion source simulation?
+# SPHERE 4, DIAMETER 22 MM
     /gate/source/addSource AS4
     /gate/source/AS4/gps/particle ion
     /gate/source/AS4/gps/ion 31 68 0 0
@@ -62,10 +58,9 @@
     /gate/source/AS4/gps/shape Sphere
     /gate/source/AS4/gps/radius 1.1 cm
     /gate/source/AS4/attachTo MIS22
-    /gate/source/AS4/setActivity 0.01 kBq
+    /gate/source/AS4/setActivity 1000 kBq
 
-
-  # Ion source simulation?
+# SPHERE 5, DIAMETER 28 MM
     /gate/source/addSource AS5
     /gate/source/AS5/gps/particle ion
     /gate/source/AS5/gps/ion 31 68 0 0
@@ -79,9 +74,9 @@
     /gate/source/AS5/gps/radius 1.4 cm
     /gate/source/AS5/attachTo MIS28
     /gate/source/AS5/setActivity 0.4713 MBq 
-    /gate/source/AS5/setActivity 0.01 kBq
+    /gate/source/AS5/setActivity 2000 kBq
 
-  # Ion source simulation?
+# SPHERE 6, DIAMETER 37 MM
     /gate/source/addSource AS6
     /gate/source/AS6/gps/particle ion
     /gate/source/AS6/gps/ion 31 68 0 0
@@ -94,9 +89,9 @@
     /gate/source/AS6/gps/shape Sphere
     /gate/source/AS6/gps/radius 1.85 cm
     /gate/source/AS6/attachTo MIS37
-    /gate/source/AS6/setActivity 0.01 kBq
+    /gate/source/AS6/setActivity 5000 kBq
 
-    # ACTIVITY IN THE BACKGROUND (BKG)
+# BACKGROUND ACTIVITY
     /gate/source/addSource BKG
     /gate/source/BKG/gps/particle ion
     /gate/source/BKG/gps/ion 31 68 0 0
@@ -114,27 +109,24 @@
     /gate/source/BKG/gps/parphi 0 deg
     /gate/source/BKG/gps/centre 0.0 0.0 3.0 cm 
     /gate/source/BKG/gps/angtype iso
-    /gate/source/BKG/setActivity 0.01 kBq
-#Ändrar till 101.3237 för starttid 16:08 so, det står i ptb.
-	#Detta om aktiviteten som står i excelfil läggs i nema utan att bry sig om koncentration (16:15) 94.3289 MBq.
-    #/gate/source/BKG/setActivity 104.819960 MBq #current
-      # UTILIZE THE FORBID COMMAND IN NEMA GEOMETRY
-      /gate/source/BKG/gps/Forbid NEMA_BOX_phys
+    /gate/source/BKG/setActivity 0 kBq
 
-        /gate/source/BKG/gps/Forbid ESS37_phys
-        /gate/source/BKG/gps/Forbid MIS37_phys
-        /gate/source/BKG/gps/Forbid CYL37_phys
-        /gate/source/BKG/gps/Forbid CIC37_phys
+    /gate/source/BKG/gps/Forbid NEMA_BOX_phys
 
-        /gate/source/BKG/gps/Forbid ESS28_phys
-        /gate/source/BKG/gps/Forbid MIS28_phys
-        /gate/source/BKG/gps/Forbid CYL28_phys
-        /gate/source/BKG/gps/Forbid CIC28_phys
+    /gate/source/BKG/gps/Forbid ESS37_phys
+    /gate/source/BKG/gps/Forbid MIS37_phys
+    /gate/source/BKG/gps/Forbid CYL37_phys
+    /gate/source/BKG/gps/Forbid CIC37_phys
 
-        /gate/source/BKG/gps/Forbid ESS22_phys
-        /gate/source/BKG/gps/Forbid MIS22_phys
-        /gate/source/BKG/gps/Forbid CYL22_phys
-        /gate/source/BKG/gps/Forbid CIC22_phys
+    /gate/source/BKG/gps/Forbid ESS28_phys
+    /gate/source/BKG/gps/Forbid MIS28_phys
+    /gate/source/BKG/gps/Forbid CYL28_phys
+    /gate/source/BKG/gps/Forbid CIC28_phys
+
+    /gate/source/BKG/gps/Forbid ESS22_phys
+    /gate/source/BKG/gps/Forbid MIS22_phys
+    /gate/source/BKG/gps/Forbid CYL22_phys
+    /gate/source/BKG/gps/Forbid CIC22_phys
 
         /gate/source/BKG/gps/Forbid ESS17_phys
         /gate/source/BKG/gps/Forbid MIS17_phys
