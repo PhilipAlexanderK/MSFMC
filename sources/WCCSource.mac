@@ -1,21 +1,18 @@
 # ACTIVITY OF THE SPHERES
 
 # Sphere in the background.
+/gate/source/addSource wcc_src
+/gate/source/wcc_src/gps/particle gamma
+/gate/source/wcc_src/setType backtoback
+/gate/source/wcc_src/setForcedUnstableFlag true
+/gate/source/wcc_src/setForcedHalfLife 6586.2 s
+/gate/source/wcc_src/gps/energytype 			Mono
+/gate/source/wcc_src/gps/monoenergy 			511. keV
+/gate/source/wcc_src/gps/angtype iso
+/gate/source/wcc_src/gps/type Volume
+/gate/source/wcc_src/gps/shape Cylinder
+/gate/source/wcc_src/gps/radius 2.5 cm
+/gate/source/wcc_src/setActivity 5 MBq
 
-# Ion source simulation?
-/gate/source/addSource AS1
-/gate/source/AS1/gps/particle gamma
-/gate/source/AS1/setType backtoback
-/gate/source/AS1/setForcedUnstableFlag true
-/gate/source/AS1/setForcedHalfLife 4069.8 s
-/gate/source/AS1/gps/energytype 			Mono
-/gate/source/AS1/gps/monoenergy 			511. keV
-/gate/source/AS1/gps/angtype iso
-/gate/source/AS1/gps/type Volume
-/gate/source/AS1/gps/shape Sphere
-/gate/source/AS1/gps/radius 2.5 cm
-/gate/source/AS1/setActivity 10 MBq
-
-/gate/source/AS1/gps/centre 5.0 3.0 0.0 cm
-
+/gate/source/wcc_src/gps/centre 5.0 3.0 0.0 cm
 /gate/source/list
