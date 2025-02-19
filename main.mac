@@ -15,8 +15,11 @@
 /gate/world/geometry/setZLength 100 cm
 
 # Visualization
+/control/execute mac/visualization.mac
 
 # Define PET geometry.
+/control/execute mac/PET_geom.mac
+
 
 # Define the physics and cuts.
 
@@ -24,9 +27,11 @@
 
 # Define 
 
-# --- Initialize --- 
-#   Triggers Geant4 to compute crossections
-/gate/run/initialize
+# Rebuild geometry
+/gate/geometry/rebuild
+
+# Initialize: triggers Geant4 to compute crossections
+#/gate/run/initialize
 
 # Define digitizer
 
@@ -34,9 +39,11 @@
 
 # Define output
 
+# Acquisition settings.
 /gate/application/setTimeSlice 1 s
 /gate/application/setTimeStart 0 s
 /gate/application/setTimeStop  1 s
 
-/gate/application/startDAQ
+# Start acquisition
+#/gate/application/startDAQ
 
