@@ -1,0 +1,43 @@
+/gate/world/daughters/name WCC_Cyl
+/gate/world/daughters/insert cylinder
+/gate/WCC_Cyl/setMaterial Plastic
+/gate/WCC_Cyl/geometry/setRmax 10.15 cm
+/gate/WCC_Cyl/geometry/setRmin 0 cm
+/gate/WCC_Cyl/geometry/setHeight 20.5 cm
+/gate/WCC_Cyl/vis/forceWireframe 0
+/gate/WCC_Cyl/vis/setColor grey
+
+/gate/WCC_Cyl/daughters/name WCC_Cont
+/gate/WCC_Cyl/daughters/insert cylinder
+/gate/WCC_Cont/setMaterial Water
+/gate/WCC_Cont/geometry/setRmax 9.75 cm
+/gate/WCC_Cont/geometry/setRmin 0 cm
+/gate/WCC_Cont/geometry/setHeight 18.25 cm
+/gate/WCC_Cont/placement/setTranslation 0 0 -0.125 cm
+/gate/WCC_Cont/vis/forceSolid 0
+/gate/WCC_Cont/vis/setColor blue
+
+/gate/WCC_BOX/daughters/name WCC_LOWLID
+/gate/WCC_BOX/daughters/insert cylinder
+/gate/WCC_LOWLID/setMaterial Plastic
+/gate/WCC_LOWLID/geometry/setRmax 12.25 cm
+/gate/WCC_LOWLID/geometry/setRmin 10.15 cm
+/gate/WCC_LOWLID/geometry/setHeight 1.25 cm
+/gate/WCC_LOWLID/placement/setTranslation 0 0 9.625 cm
+/gate/WCC_LOWLID/vis/setColor grey
+/gate/WCC_LOWLID/vis/forceSolid 0
+
+/gate/WCC_BOX/daughters/name WCC_HILID
+/gate/WCC_BOX/daughters/insert cylinder
+/gate/WCC_HILID/setMaterial Plastic
+/gate/WCC_HILID/geometry/setRmax 12.25 cm
+/gate/WCC_HILID/geometry/setRmin 0 cm
+/gate/WCC_HILID/geometry/setHeight 1.25 cm
+/gate/WCC_HILID/placement/setTranslation 0 0 10.875 cm
+/gate/WCC_HILID/vis/setColor grey
+/gate/WCC_HILID/vis/forceSolid 0
+
+/gate/WCC_Cyl/attachPhantomSD
+/gate/WCC_Cont/attachPhantomSD
+/gate/WCC_LOWLID/attachPhantomSD
+/gate/WCC_HILID/attachPhantomSD
