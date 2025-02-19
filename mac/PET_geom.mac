@@ -1,3 +1,12 @@
+# GATE cylindrical PET system hierarchy
+# World
+#     |_ cylindricalPET
+#                     |_Module
+#                            |_Submodule
+#                                      |_Crystal
+#                                              |_ LayerX
+
+# Cylinder
 /gate/world/daughters/name cylindricalPET
 /gate/world/daughters/insert cylinder
 /gate/cylindricalPET/setMaterial LSO
@@ -7,5 +16,73 @@
 /gate/cylindricalPET/vis/forceWireframe 1
 /gate/cylindricalPET/vis/forceSolid 0
 /gate/cylindricalPET/vis/setColor black
-/gate/cylindircalPET/vis/setVisible 1
+/gate/cylindricalPET/vis/setVisible 1
 
+# Module
+/gate/cylindricalPET/daughters/name PETmodule
+/gate/cylindricalPET/daughters/insert box
+/gate/PETmodule/setMaterial Air
+/gate/PETmodule/geometry/setXLength 3 cm
+/gate/PETmodule/geometry/setYLength 6 cm
+/gate/PETmodule/geometry/setZLength 20 cm
+/gate/PETmodule/vis/forceWireframe 1
+/gate/PETmodule/vis/forceSolid 0
+/gate/PETmodule/vis/setColor blue
+/gate/PETmodule/vis/setVisible 1
+
+/gate/PETmodule/placement/setTranslation 32.5 0 0 cm
+
+# Submodule
+/gate/PETmodule/daughters/name PETsmod
+/gate/PETmodule/daughters/insert box
+/gate/PETsmod/setMaterial Air
+/gate/PETsmod/geometry/setXLength 3 cm
+/gate/PETsmod/geometry/setYLength 2 cm
+/gate/PETsmod/geometry/setZLength 4 cm
+/gate/PETsmod/vis/forceWireframe 1
+/gate/PETsmod/vis/forceSolid 0
+/gate/PETsmod/vis/setColor blue
+/gate/PETsmod/vis/setVisible 1
+
+# Crystal
+/gate/PETsmod/daughters/name PETcrystal
+/gate/PETsmod/daughters/insert box
+/gate/PETcrystal/setMaterial Air
+/gate/PETcrystal/geometry/setXLength 3 cm
+/gate/PETcrystal/geometry/setYLength 1 cm
+/gate/PETcrystal/geometry/setZLength 1 cm
+/gate/PETcrystal/vis/forceWireframe 1
+/gate/PETcrystal/vis/forceSolid 0
+/gate/PETcrystal/vis/setColor yellow
+/gate/PETcrystal/vis/setVisible 1
+
+# Layer
+/gate/PETcrystal/daughters/name PETlayer
+/gate/PETcrystal/daughters/insert box
+/gate/PETlayer/setMaterial Air
+/gate/PETlayer/geometry/setXLength 3 cm
+/gate/PETlayer/geometry/setYLength 1 cm
+/gate/PETlayer/geometry/setZLength 1 cm
+/gate/PETlayer/vis/forceWireframe 0
+/gate/PETlayer/vis/forceSolid 1
+/gate/PETlayer/vis/setColor yellow
+/gate/PETlayer/vis/setVisible 1
+
+# Repeaters crystal
+/gate/PETcrystal/repeaters/insert cubicArray
+/gate/PETcrystal/cubicArray/setRepeatNumberX 1
+/gate/PETcrystal/cubicArray/setRepeatNumberY 2
+/gate/PETcrystal/cubicArray/setRepeatNumberZ 4
+/gate/PETcrystal/cubicArray/setRepeatVector 0 1 1 cm
+
+# Repeaters smod
+/gate/PETsmod/repeaters/insert cubicArray
+/gate/PETsmod/cubicArray/setRepeatNumberX 1
+/gate/PETsmod/cubicArray/setRepeatNumberY 3
+/gate/PETsmod/cubicArray/setRepeatNumberZ 5
+/gate/PETsmod/cubicArray/setRepeatVector 0 2 4 cm
+
+# Repeaters module
+/gate/PETmodule/repeaters/insert ring
+/gate/PETmodule/ring/setRepeatNumber 32
+/gate/PETmodule/ring/setFirstAngle 0 deg
