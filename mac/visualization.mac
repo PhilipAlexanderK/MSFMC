@@ -2,7 +2,7 @@
 
 /vis/open OGLIQt
 /vis/viewer/set/viewpointThetaPhi 60 60
-/vis/viewer/zoom 2
+/vis/viewer/zoom 1.3
 /vis/drawVolume
 /vis/viewer/set/background white
 /vis/scene/add/axes

@@ -1,0 +1,11 @@
+/gate/world/daughters/name cylindricalPET
+/gate/world/daughters/insert cylinder
+/gate/cylindricalPET/setMaterial LSO
+/gate/cylindricalPET/geometry/setRmax 35 cm
+/gate/cylindricalPET/geometry/setRmin 30 cm
+/gate/cylindricalPET/geometry/setHeight 20 cm
+/gate/cylindricalPET/vis/forceWireframe 1
+/gate/cylindricalPET/vis/forceSolid 0
+/gate/cylindricalPET/vis/setColor black
+/gate/cylindircalPET/vis/setVisible 1
+
