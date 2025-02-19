@@ -86,3 +86,11 @@
 /gate/PETmodule/repeaters/insert ring
 /gate/PETmodule/ring/setRepeatNumber 32
 /gate/PETmodule/ring/setFirstAngle 0 deg
+
+# Attach system
+/gate/systems/cylindricalPET/rsector/attach PETmodule
+/gate/systems/cylindricalPET/module/attach PETsmod
+/gate/systems/cylindricalPET/crystal/attach PETcrystal
+/gate/systems/cylindricalPET/layer0/attach PETlayer
+
+/gate/PETcrystal/attachCrystalSD
