@@ -20,12 +20,13 @@
 # Define PET geometry.
 /control/execute mac/PET_geom.mac
 
-
 # Define the physics and cuts.
+/control/execute mac/physics_L.mac
+#/control/execute mac/physics_I.mac
 
 # Define actors.
-
-# Define 
+/control/execute mac/simstat.mac
+/control/execute mac/mumap.mac
 
 # Rebuild geometry
 /gate/geometry/rebuild
@@ -34,6 +35,7 @@
 #/gate/run/initialize
 
 # Define digitizer
+/control/execute mac/digitizer.mac
 
 # Define source
 
