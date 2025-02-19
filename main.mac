@@ -20,6 +20,9 @@
 # Define PET geometry.
 /control/execute mac/PET_geom.mac
 
+# Define phantom.
+/control/execute phantoms/nema.mac
+
 # Define the physics and cuts.
 /control/execute mac/physics_L.mac
 #/control/execute mac/physics_I.mac
@@ -32,14 +35,16 @@
 /gate/geometry/rebuild
 
 # Initialize: triggers Geant4 to compute crossections
-#/gate/run/initialize
+/gate/run/initialize
 
 # Define digitizer
 /control/execute mac/digitizer.mac
 
 # Define source
+/control/execute sources/nema_src.mac
 
 # Define output
+/control/execute mac/output.mac
 
 # Acquisition settings.
 /gate/application/setTimeSlice 1 s
