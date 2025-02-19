@@ -14,5 +14,5 @@
 /gate/source/wcc_src/gps/halfz 9.125 cm
 /gate/source/wcc_src/setActivity 5 MBq
 
-/gate/source/wcc_src/gps/attachTo WCC_CONT
+/gate/source/wcc_src/gps/attachTo WCC_Cont
 /gate/source/list
