@@ -21,7 +21,7 @@
 /control/execute mac/PET_geom.mac
 
 # Define phantom.
-/control/execute phantoms/nema.mac
+/control/execute phantoms/wcc.mac
 
 # Define the physics and cuts.
 /control/execute mac/physics_L.mac
@@ -41,7 +41,7 @@
 /control/execute mac/digitizer.mac
 
 # Define source
-/control/execute sources/nema_src.mac
+/control/execute sources/wcc_src.mac
 
 # Define output
 /control/execute mac/output.mac
