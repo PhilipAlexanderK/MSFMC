@@ -1,0 +1,533 @@
+/gate/world/daughters/name name_cyl
+/gate/world/daughters/insert cylinder
+/gate/name_cyl/setMaterial Air
+/gate/name_cyl/geometry/setRmax 32.5 cm
+/gate/name_cyl/geometry/setRmin 0 cm
+/gate/name_cyl/geometry/setHeight 60 cm
+/gate/name_cyl/placement/setRotationAxis 0 0 1
+/gate/name_cyl/placement/setRotationAngle 0 deg
+/gate/name_cyl/placement/setTranslation 0 0 3 cm
+/gate/name_cyl/vis/forceWireframe
+/gate/name_cyl/vis/setColor black
+
+# NEMA-BOX
+/gate/name_cyl/daughters/name NEMA_BOX
+/gate/name_cyl/daughters/insert box
+/gate/NEMA_BOX/setMaterial Air
+/gate/NEMA_BOX/geometry/setXLength 30 cm
+/gate/NEMA_BOX/geometry/setYLength 24 cm
+/gate/NEMA_BOX/geometry/setZLength 30 cm
+/gate/NEMA_BOX/placement/setTranslation 0.0 0.0 0.0 cm 
+/gate/NEMA_BOX/placement/setRotationAxis 0 1 0
+/gate/NEMA_BOX/placement/setRotationAngle 180 deg
+/gate/NEMA_BOX/vis/forceWireframe
+/gate/NEMA_BOX/vis/setColor black
+
+/gate/name_cyl/daughters/name table_1
+/gate/name_cyl/daughters/insert box
+/gate/table_1/setMaterial CarbonFiber
+/gate/table_1/geometry/setXLength 19 cm
+/gate/table_1/geometry/setYLength 0.3 cm
+/gate/table_1/geometry/setZLength 60 cm
+/gate/table_1/vis/forceSolid
+/gate/table_1/vis/setColor yellow
+/gate/table_1/placement/setTranslation 0 -19.85 0 cm
+
+/gate/name_cyl/daughters/name table_r
+/gate/name_cyl/daughters/insert box
+/gate/table_r/setMaterial CarbonFiber
+/gate/table_r/geometry/setXLength 14 cm
+/gate/table_r/geometry/setYLength 0.3 cm
+/gate/table_r/geometry/setZLength 60 cm
+/gate/table_r/vis/forceSolid
+/gate/table_r/vis/setColor yellow
+/gate/table_r/placement/setTranslation 15.35 -15.85 0 cm
+/gate/table_r/placement/setRotationAxis 0 0 1
+/gate/table_r/placement/setRotationAngle 34.8499 deg
+
+/gate/name_cyl/daughters/name table_l
+/gate/name_cyl/daughters/insert box
+/gate/table_l/setMaterial CarbonFiber
+/gate/table_l/geometry/setXLength 14 cm
+/gate/table_l/geometry/setYLength 0.3 cm
+/gate/table_l/geometry/setZLength 60 cm
+/gate/table_l/vis/forceSolid
+/gate/table_l/vis/setColor yellow
+/gate/table_l/placement/setTranslation -15.35 -15.85 0 cm
+/gate/table_l/placement/setRotationAxis 0 0 1
+/gate/table_l/placement/setRotationAngle -34.8499 deg
+
+/gate/name_cyl/daughters/name table_u
+/gate/name_cyl/daughters/insert cylinder
+/gate/table_u/setMaterial CarbonFiber
+/gate/table_u/geometry/setHeight 60 cm
+/gate/table_u/geometry/setRmax 48.95 cm
+/gate/table_u/geometry/setRmin 48.65 cm
+/gate/table_u/placement/setTranslation 0 32.5 0 cm
+/gate/table_u/placement/setRotationAxis 0 0 1
+/gate/table_u/placement/setRotationAngle 95 deg
+/gate/table_u/geometry/setPhiStart 150 deg
+/gate/table_u/geometry/setDeltaPhi 50 deg
+/gate/table_u/vis/forceSolid
+/gate/table_u/vis/setColor yellow
+
+/gate/table_1/attachPhantomSD
+/gate/table_l/attachPhantomSD
+/gate/table_r/attachPhantomSD
+/gate/table_u/attachPhantomSD
+
+	# UPPER CYLINDER
+
+		# PLASTIC UPPER CYLINDER (PlaUC)
+
+		/gate/NEMA_BOX/daughters/name PlaUC
+		/gate/NEMA_BOX/daughters/insert cylinder
+		/gate/PlaUC/setMaterial Plastic
+		/gate/PlaUC/geometry/setRmax 15.0 cm
+		/gate/PlaUC/geometry/setHeight 21.8 cm
+		/gate/PlaUC/geometry/setPhiStart 0. deg
+		/gate/PlaUC/geometry/setDeltaPhi 180. deg
+		/gate/PlaUC/placement/setTranslation 0.0 -3.5 0.0 cm
+		/gate/PlaUC/vis/forceWireframe
+		/gate/PlaUC/vis/setColor gray
+
+			# MATERIAL INSIDE UPPER CYLINDER (UCM)
+
+			/gate/PlaUC/daughters/name UCM
+			/gate/PlaUC/daughters/insert cylinder
+			/gate/UCM/setMaterial Water
+			/gate/UCM/geometry/setRmax 14.7 cm
+			/gate/UCM/geometry/setRmin 0.0 cm
+			/gate/UCM/geometry/setHeight 19.7 cm
+			/gate/UCM/geometry/setPhiStart 0. deg
+			/gate/UCM/geometry/setDeltaPhi 180. deg
+			/gate/UCM/placement/setTranslation 0.0 0.0 0.0 cm
+			/gate/UCM/vis/forceWireframe
+			/gate/UCM/vis/setColor blue
+
+		# INSERTION OF THE NEMA PHANTOM (INSERTION)
+
+		/gate/UCM/daughters/name INSERTION
+		/gate/UCM/daughters/insert cylinder
+		/gate/INSERTION/setMaterial Plastic
+		/gate/INSERTION/geometry/setRmin 0 cm
+		/gate/INSERTION/geometry/setRmax 2.55 cm
+		/gate/INSERTION/geometry/setHeight 19.7 cm
+		/gate/INSERTION/placement/setTranslation 0.0 3.5 0.0 cm
+		/gate/INSERTION/vis/forceWireframe
+		/gate/INSERTION/vis/setColor magenta
+
+			# MATERIAL OF THE INSERTION (MAT_INSERTION)
+
+			/gate/INSERTION/daughters/name MAT_INSERTION
+			/gate/INSERTION/daughters/insert cylinder
+			/gate/MAT_INSERTION/setMaterial Lung
+			/gate/MAT_INSERTION/geometry/setRmax 2.35 cm
+			/gate/MAT_INSERTION/geometry/setHeight 18.7 cm
+			/gate/MAT_INSERTION/geometry/setRmin 0.0 cm
+			/gate/MAT_INSERTION/placement/setTranslation 0.0 0.0 -0.5 cm
+			/gate/MAT_INSERTION/vis/forceWireframe
+			/gate/MAT_INSERTION/vis/setColor gray
+
+	# LOWER PART OF NEMA PHANTOM
+
+		# PLASTIC LOWER MIDDLE PART (PlaLMP)
+
+		/gate/NEMA_BOX/daughters/name PlaLMP
+		/gate/NEMA_BOX/daughters/insert box
+		/gate/PlaLMP/setMaterial Plastic
+		/gate/PlaLMP/geometry/setXLength 14.0 cm
+		/gate/PlaLMP/geometry/setYLength 8.0 cm
+		/gate/PlaLMP/geometry/setZLength 21.8 cm
+		/gate/PlaLMP/placement/setTranslation 0.0 -7.5 0.0 cm
+		/gate/PlaLMP/vis/forceWireframe
+		/gate/PlaLMP/vis/setColor gray
+
+			# MATERIAL INSIDE LOWER MIDDLE PART (LMPM)
+
+			/gate/PlaLMP/daughters/name LMPM
+			/gate/PlaLMP/daughters/insert box
+			/gate/LMPM/setMaterial Water
+			/gate/LMPM/geometry/setXLength 14.0 cm
+			/gate/LMPM/geometry/setYLength 7.7 cm
+			/gate/LMPM/geometry/setZLength 19.7 cm
+			/gate/LMPM/placement/setTranslation 0.0 0.15 0.0 cm
+			/gate/LMPM/vis/forceWireframe
+			/gate/LMPM/vis/setColor blue
+
+
+		# PLASTIC LOWER LEFT PART (PlaLLP)
+
+		/gate/NEMA_BOX/daughters/name PlaLLP
+		/gate/NEMA_BOX/daughters/insert cylinder
+		/gate/PlaLLP/setMaterial Plastic
+		/gate/PlaLLP/geometry/setRmax 8.0 cm
+		/gate/PlaLLP/geometry/setHeight 21.8 cm
+		/gate/PlaLLP/geometry/setPhiStart 180 deg
+		/gate/PlaLLP/geometry/setDeltaPhi 90 deg
+		/gate/PlaLLP/placement/setTranslation -7.0 -3.5 0.0 cm
+		/gate/PlaLLP/vis/forceWireframe
+		/gate/PlaLLP/vis/setColor gray
+
+			# MATERIAL INSIDE THE LOWER LEFT PART (LLPM)
+
+			/gate/PlaLLP/daughters/name LLPM
+			/gate/PlaLLP/daughters/insert cylinder
+			/gate/LLPM/setMaterial Water
+			/gate/LLPM/geometry/setRmax 7.7 cm
+			/gate/LLPM/geometry/setHeight 19.7 cm
+			/gate/LLPM/geometry/setPhiStart 180 deg
+			/gate/LLPM/geometry/setDeltaPhi 90 deg
+			/gate/LLPM/placement/setTranslation 0.0 0.0 0.0 cm
+			/gate/LLPM/vis/forceWireframe
+			/gate/LLPM/vis/setColor blue
+
+		# PLASTIC LOWER RIGHT PART (PlaLRP)
+
+		/gate/NEMA_BOX/daughters/name PlaLRP
+		/gate/NEMA_BOX/daughters/insert cylinder
+		/gate/PlaLRP/setMaterial Plastic
+		/gate/PlaLRP/geometry/setRmax 8.0 cm
+		/gate/PlaLRP/geometry/setHeight 21.8 cm
+		/gate/PlaLRP/geometry/setPhiStart 270 deg
+		/gate/PlaLRP/geometry/setDeltaPhi 90 deg
+		/gate/PlaLRP/placement/setTranslation 7.0 -3.5 0.0 cm
+		/gate/PlaLRP/vis/forceWireframe
+		/gate/PlaLRP/vis/setColor gray
+
+			# MATERIAL INSIDE THE LOWER RIGHT PART (LRPM)
+
+			/gate/PlaLRP/daughters/name LRPM
+			/gate/PlaLRP/daughters/insert cylinder
+			/gate/LRPM/setMaterial Water
+			/gate/LRPM/geometry/setRmax 7.7 cm
+			/gate/LRPM/geometry/setHeight 19.7 cm
+			/gate/LRPM/geometry/setPhiStart 270 deg
+			/gate/LRPM/geometry/setDeltaPhi 90 deg
+			/gate/LRPM/placement/setTranslation 0.0 0.0 0.0 cm
+			/gate/LRPM/vis/forceWireframe
+			/gate/LRPM/vis/setColor blue
+
+
+
+			# SPHERES
+
+				# EXTERIOR SHELL OF SPHERE, DIAMETER: 38 MM (ESS37)
+
+				/gate/UCM/daughters/name ESS37
+				/gate/UCM/daughters/insert sphere
+				/gate/ESS37/setMaterial Plastic
+				/gate/ESS37/geometry/setRmax 1.9 cm
+				/gate/ESS37/geometry/setRmin 0.0 cm
+				/gate/ESS37/placement/setTranslation 5.72 3.5 2.85 cm
+				/gate/ESS37/vis/forceWireframe
+				/gate/ESS37/vis/setColor gray
+
+					# MATERIAL INSIDE SPHERE, DIAMTER: 37 MM (MIS37)
+
+					/gate/ESS37/daughters/name MIS37
+					/gate/ESS37/daughters/insert sphere
+					/gate/MIS37/setMaterial Water
+					/gate/MIS37/geometry/setRmax 1.85 cm
+					/gate/MIS37/geometry/setRmin 0.0 cm
+					/gate/MIS37/placement/setTranslation 0.0 0.0 0.0 cm
+					/gate/MIS37/vis/forceWireframe
+					/gate/MIS37/vis/setColor blue
+
+				# EXTERIOR SHELL OF SPHERE, DIAMETER: 29 MM (ESS28)
+
+				/gate/LMPM/daughters/name ESS28
+				/gate/LMPM/daughters/insert sphere
+				/gate/ESS28/setMaterial Plastic
+				/gate/ESS28/geometry/setRmax 1.45 cm
+				/gate/ESS28/geometry/setRmin 0.0 cm
+				/gate/ESS28/placement/setTranslation 2.86 2.39633 2.85 cm
+				/gate/ESS28/vis/forceWireframe
+				/gate/ESS28/vis/setColor gray
+
+					# MATERIAL INSIDE SPHERE, DIAMETER: 28 MM (MIS28)
+
+					/gate/ESS28/daughters/name MIS28
+					/gate/ESS28/daughters/insert sphere
+					/gate/MIS28/setMaterial Water
+					/gate/MIS28/geometry/setRmax 1.4 cm
+					/gate/MIS28/geometry/setRmin 0.0 cm
+					/gate/MIS28/placement/setTranslation 0.0 0.0 0.0 cm
+					/gate/MIS28/vis/forceWireframe
+					/gate/MIS28/vis/setColor blue
+
+				# EXTERIOR SHELL OF SPHERE, DIAMETER: 11 MM (ESS10)
+
+				/gate/UCM/daughters/name ESS10
+				/gate/UCM/daughters/insert sphere
+				/gate/ESS10/setMaterial Plastic
+				/gate/ESS10/geometry/setRmax 0.55 cm
+				/gate/ESS10/geometry/setRmin 0.0 cm
+				/gate/ESS10/placement/setTranslation 2.86 8.45367 2.85 cm
+				/gate/ESS10/vis/forceWireframe
+				/gate/ESS10/vis/setColor gray
+
+					# MATERIAL INSIDE SPHERE, DIAMETER: 10 MM (MIS10)
+
+					/gate/ESS10/daughters/name MIS10
+					/gate/ESS10/daughters/insert sphere
+					/gate/MIS10/setMaterial Water
+					/gate/MIS10/geometry/setRmax 0.5 cm
+					/gate/MIS10/geometry/setRmin 0.0 cm
+					/gate/MIS10/placement/setTranslation 0.0 0.0 0.0 cm
+					/gate/MIS10/vis/forceWireframe
+					/gate/MIS10/vis/setColor blue
+
+				# EXTERIOR SHELL OF SPHERE, DIAMETER: 14 MM (ESS13)
+
+				/gate/UCM/daughters/name ESS13
+				/gate/UCM/daughters/insert sphere
+				/gate/ESS13/setMaterial Plastic
+				/gate/ESS13/geometry/setRmax 0.7 cm
+				/gate/ESS13/geometry/setRmin 0.0 cm
+				/gate/ESS13/placement/setTranslation -2.86 8.45367 2.85 cm
+				/gate/ESS13/vis/forceWireframe
+				/gate/ESS13/vis/setColor gray
+
+					# MATERIAL INSIDE SPHERE, DIAMETER: 13 MM (MIS13)
+
+					/gate/ESS13/daughters/name MIS13
+					/gate/ESS13/daughters/insert sphere
+					/gate/MIS13/setMaterial Water
+					/gate/MIS13/geometry/setRmax 0.65 cm
+					/gate/MIS13/geometry/setRmin 0.0 cm
+					/gate/MIS13/placement/setTranslation 0.0 0.0 0.0 cm
+					/gate/MIS13/vis/forceWireframe
+					/gate/MIS13/vis/setColor blue
+
+				# EXTERIOR SHELL OF SPHERE, DIAMETER: 23 MM (ESS22)
+
+				/gate/LMPM/daughters/name ESS22
+				/gate/LMPM/daughters/insert sphere
+				/gate/ESS22/setMaterial Plastic
+				/gate/ESS22/geometry/setRmax 1.15 cm
+				/gate/ESS22/geometry/setRmin 0.0 cm
+				/gate/ESS22/placement/setTranslation  -2.86 2.39633 2.85 cm
+				/gate/ESS22/vis/forceWireframe
+				/gate/ESS22/vis/setColor gray
+
+					# MATERIAL INSIDE SPHERE, DIAMETER: 22 MM (MIS22)
+
+					/gate/ESS22/daughters/name MIS22
+					/gate/ESS22/daughters/insert sphere
+					/gate/MIS22/setMaterial Water
+					/gate/MIS22/geometry/setRmax 1.1 cm
+					/gate/MIS22/geometry/setRmin 0.0 cm
+					/gate/MIS22/placement/setTranslation 0.0 0.0 0.0 cm
+					/gate/MIS22/vis/forceWireframe
+					/gate/MIS22/vis/setColor blue
+
+				# EXTERIOR SHELL OF SPHERE, DIAMETER: 18 MM (ESS17)
+
+				/gate/UCM/daughters/name ESS17
+				/gate/UCM/daughters/insert sphere
+				/gate/ESS17/setMaterial Plastic
+				/gate/ESS17/geometry/setRmax 0.9 cm
+				/gate/ESS17/geometry/setRmin 0.0 cm
+			    /gate/ESS17/placement/setTranslation -5.72 3.5 2.85 cm
+				/gate/ESS17/vis/forceWireframe
+				/gate/ESS17/vis/setColor gray
+
+					# MATERIAL INSIDE SPHERE, DIAMTER: 17 MM (MIS17)
+
+					/gate/ESS17/daughters/name MIS17
+					/gate/ESS17/daughters/insert sphere
+					/gate/MIS17/setMaterial Water
+					/gate/MIS17/geometry/setRmax 0.85 cm
+					/gate/MIS17/geometry/setRmin 0.0 cm
+					/gate/MIS17/placement/setTranslation 0.0 0.0 0.0 cm
+					/gate/MIS17/vis/forceWireframe
+					/gate/MIS17/vis/setColor blue
+
+
+
+					# CYLINDERS CONNECTING SPHERES TO PHANTOM
+
+						# CYLINDER FOR SPHERE WITH DIAMETER: 18 MM (CYL17)
+
+						/gate/UCM/daughters/name CYL17
+						/gate/UCM/daughters/insert cylinder
+						/gate/CYL17/setMaterial Plastic
+						/gate/CYL17/geometry/setRmax 0.35 cm
+						/gate/CYL17/geometry/setHeight 6.1 cm
+						/gate/CYL17/placement/setTranslation -5.72 3.5 6.8 cm
+						/gate/CYL17/vis/forceSolid
+						/gate/CYL17/vis/setColor gray
+
+							# CAVITY INSIDE CYLINDER (CIC17)
+
+							/gate/CYL17/daughters/name CIC17
+							/gate/CYL17/daughters/insert cylinder
+							/gate/CIC17/setMaterial Air
+							/gate/CIC17/geometry/setRmax 0.25 cm
+							/gate/CIC17/geometry/setRmin 0.0 cm
+							/gate/CIC17/geometry/setHeight 6.1 cm
+							/gate/CIC17/placement/setTranslation 0.0 0.0 0.0 cm
+							/gate/CIC17/vis/forceWireframe
+							/gate/CIC17/vis/setColor white
+
+						# CYLINDER FOR SPHERE WITH DIAMETER: 38 MM (CYL37)
+
+						/gate/UCM/daughters/name CYL37
+						/gate/UCM/daughters/insert cylinder
+						/gate/CYL37/setMaterial Plastic
+						/gate/CYL37/geometry/setRmax 0.35 cm
+						/gate/CYL37/geometry/setRmin 0.0 cm
+						/gate/CYL37/geometry/setHeight 5.1 cm
+						/gate/CYL37/placement/setTranslation 5.72 3.5 7.3 cm
+						/gate/CYL37/vis/forceSolid
+						/gate/CYL37/vis/setColor gray
+
+							# CAVITY INSIDE CYLINDER (CIC37)
+
+							/gate/CYL37/daughters/name CIC37
+							/gate/CYL37/daughters/insert cylinder
+							/gate/CIC37/setMaterial Air
+							/gate/CIC37/geometry/setRmax 0.25 cm
+							/gate/CIC37/geometry/setRmin 0.0 cm
+							/gate/CIC37/geometry/setHeight 5.1 cm
+							/gate/CIC37/placement/setTranslation 0.0 0.0 0.0 cm
+							/gate/CIC37/vis/forceWireframe
+							/gate/CIC37/vis/setColor white
+
+
+						# CYLINDER FOR SPHERE WITH DIAMETER: 11 MM (CYL10)
+
+						/gate/UCM/daughters/name CYL10
+						/gate/UCM/daughters/insert cylinder
+						/gate/CYL10/setMaterial Plastic
+						/gate/CYL10/geometry/setRmax 0.35 cm
+						/gate/CYL10/geometry/setRmin 0.0 cm
+						/gate/CYL10/geometry/setHeight 6.45 cm
+						/gate/CYL10/placement/setTranslation 2.86 8.45367 6.625 cm
+						/gate/CYL10/vis/forceSolid
+						/gate/CYL10/vis/setColor gray
+
+							# CAVITY INSIDE CYLINDER (CIC10)
+
+							/gate/CYL10/daughters/name CIC10
+							/gate/CYL10/daughters/insert cylinder
+							/gate/CIC10/setMaterial Air
+							/gate/CIC10/geometry/setRmax 0.25 cm
+							/gate/CIC10/geometry/setRmin 0.0 cm
+							/gate/CIC10/geometry/setHeight 6.45 cm
+							/gate/CIC10/placement/setTranslation 0.0 0.0 0.0 cm
+							/gate/CIC10/vis/forceWireframe
+							/gate/CIC10/vis/setColor white
+
+						# CYLINDER FOR SPHERE WITH DIAMETER: 14 MM (CYL13)
+
+						/gate/UCM/daughters/name CYL13
+						/gate/UCM/daughters/insert cylinder
+						/gate/CYL13/setMaterial Plastic
+						/gate/CYL13/geometry/setRmax 0.35 cm
+						/gate/CYL13/geometry/setRmin 0.0 cm
+						/gate/CYL13/geometry/setHeight 6.3 cm
+						/gate/CYL13/placement/setTranslation -2.86 8.45367 6.7 cm
+						/gate/CYL13/vis/forceSolid
+						/gate/CYL13/vis/setColor gray
+
+							# CAVITY INSIDE CYLINDER (CIC13)
+
+							/gate/CYL13/daughters/name CIC13
+							/gate/CYL13/daughters/insert cylinder
+							/gate/CIC13/setMaterial Air
+							/gate/CIC13/geometry/setRmax 0.25 cm
+							/gate/CIC13/geometry/setRmin 0.0 cm
+							/gate/CIC13/geometry/setHeight 6.3 cm
+							/gate/CIC13/placement/setTranslation 0.0 0.0 0.0 cm
+							/gate/CIC13/vis/forceSolid
+							/gate/CIC13/vis/setColor white
+
+						# CYLINDER FOR SPHERE WITH DIAMETER: 23 MM (CYL22)
+
+						/gate/LMPM/daughters/name CYL22
+						/gate/LMPM/daughters/insert cylinder
+						/gate/CYL22/setMaterial Plastic
+						/gate/CYL22/geometry/setRmax 0.35 cm
+						/gate/CYL22/geometry/setRmin 0.0 cm
+						/gate/CYL22/geometry/setHeight 5.85 cm
+						/gate/CYL22/placement/setTranslation -2.86 2.39633 6.925 cm
+						/gate/CYL22/vis/forceSolid
+						/gate/CYL22/vis/setColor gray
+
+							# CAVITY INSIDE CYLINDER (CIC22)
+
+							/gate/CYL22/daughters/name CIC22
+							/gate/CYL22/daughters/insert cylinder
+							/gate/CIC22/setMaterial Air
+							/gate/CIC22/geometry/setRmax 0.25 cm
+							/gate/CIC22/geometry/setRmin 0.0 cm
+							/gate/CIC22/geometry/setHeight 5.85 cm
+							/gate/CIC22/placement/setTranslation 0.0 0.0 0.0 cm
+							/gate/CIC22/vis/forceWireframe
+							/gate/CIC22/vis/setColor white
+
+						# CYLINDER FOR SPHERE WITH DIAMETER: 29 MM (CYL28)
+
+						/gate/LMPM/daughters/name CYL28
+						/gate/LMPM/daughters/insert cylinder
+						/gate/CYL28/setMaterial Plastic
+						/gate/CYL28/geometry/setRmax 0.35 cm
+						/gate/CYL28/geometry/setRmin 0.0 cm
+						/gate/CYL28/geometry/setHeight 5.55 cm
+						/gate/CYL28/placement/setTranslation 2.86 2.39633 7.075 cm
+						/gate/CYL28/vis/forceSolid
+						/gate/CYL28/vis/setColor gray
+
+							# CAVITY INSIDE CYLINDER (CIC28)
+
+							/gate/CYL28/daughters/name CIC28
+							/gate/CYL28/daughters/insert cylinder
+							/gate/CIC28/setMaterial Air
+							/gate/CIC28/geometry/setRmax 0.25 cm
+							/gate/CIC28/geometry/setRmin 0.0 cm
+							/gate/CIC28/geometry/setHeight 5.55 cm
+							/gate/CIC28/placement/setTranslation 0.0 0.0 0.0 cm
+							/gate/CIC28/vis/forceWireframe
+							/gate/CIC28/vis/setColor white
+
+							  /gate/NEMA_BOX/attachPhantomSD
+							  
+
+
+							  /gate/PlaUC/attachPhantomSD
+							  /gate/UCM/attachPhantomSD
+							  /gate/INSERTION/attachPhantomSD
+							  /gate/MAT_INSERTION/attachPhantomSD
+							  /gate/PlaLMP/attachPhantomSD
+							  /gate/LMPM/attachPhantomSD
+							  /gate/PlaLLP/attachPhantomSD
+							  /gate/LLPM/attachPhantomSD
+							  /gate/PlaLRP/attachPhantomSD
+							  /gate/LRPM/attachPhantomSD
+							  /gate/ESS37/attachPhantomSD
+							  /gate/MIS37/attachPhantomSD
+							  /gate/ESS28/attachPhantomSD
+							  /gate/MIS28/attachPhantomSD
+							  /gate/ESS22/attachPhantomSD
+							  /gate/MIS22/attachPhantomSD
+							  /gate/ESS17/attachPhantomSD
+							  /gate/MIS17/attachPhantomSD
+							  /gate/ESS13/attachPhantomSD
+							  /gate/MIS13/attachPhantomSD
+							  /gate/ESS10/attachPhantomSD
+							  /gate/MIS10/attachPhantomSD
+							  /gate/CYL37/attachPhantomSD
+							  /gate/CIC37/attachPhantomSD
+							  /gate/CYL28/attachPhantomSD
+							  /gate/CIC28/attachPhantomSD
+							  /gate/CYL22/attachPhantomSD
+							  /gate/CIC22/attachPhantomSD
+							  /gate/CYL17/attachPhantomSD
+							  /gate/CIC17/attachPhantomSD
+							  /gate/CYL13/attachPhantomSD
+							  /gate/CIC13/attachPhantomSD
+							  /gate/CYL10/attachPhantomSD
+							  /gate/CIC10/attachPhantomSD
+
