@@ -36,12 +36,12 @@
     /gate/source/AS3/gps/ion 31 68 0 0
     /gate/source/AS3/setForcedUnstableFlag true
     /gate/source/AS3/setForcedHalfLife 4069.8 s
-    /gate/source/AS3/gps/energytype 			Mono
-    /gate/source/AS3/gps/monoenergy 			0. MeV
-    /gate/source/AS3/gps/angtype iso
-    /gate/source/AS3/gps/type Volume
-    /gate/source/AS3/gps/shape Sphere
-    /gate/source/AS3/gps/radius 0.85 cm
+    /gate/source/AS3/gps/ene/type 			Mono
+    /gate/source/AS3/gps/ene/mono 			0. MeV
+    /gate/source/AS3/gps/ang/type iso
+    /gate/source/AS3/gps/pos/type Volume
+    /gate/source/AS3/gps/pos/shape Sphere
+    /gate/source/AS3/gps/pos/radius 0.85 cm
     /gate/source/AS3/attachTo MIS17
     /gate/source/AS3/setActivity 500 kBq
 
@@ -51,12 +51,12 @@
     /gate/source/AS4/gps/ion 31 68 0 0
     /gate/source/AS4/setForcedUnstableFlag true
     /gate/source/AS4/setForcedHalfLife 4069.8 s
-    /gate/source/AS4/gps/energytype 			Mono
-    /gate/source/AS4/gps/monoenergy 			0. MeV
-    /gate/source/AS4/gps/angtype iso
-    /gate/source/AS4/gps/type Volume
-    /gate/source/AS4/gps/shape Sphere
-    /gate/source/AS4/gps/radius 1.1 cm
+    /gate/source/AS4/gps/ene/type 			Mono
+    /gate/source/AS4/gps/ene/mono 			0. MeV
+    /gate/source/AS4/gps/ang/type iso
+    /gate/source/AS4/gps/pos/type Volume
+    /gate/source/AS4/gps/pos/shape Sphere
+    /gate/source/AS4/gps/pos/radius 1.1 cm
     /gate/source/AS4/attachTo MIS22
     /gate/source/AS4/setActivity 1000 kBq
 
@@ -66,12 +66,12 @@
     /gate/source/AS5/gps/ion 31 68 0 0
     /gate/source/AS5/setForcedUnstableFlag true
     /gate/source/AS5/setForcedHalfLife 4069.8 s
-    /gate/source/AS5/gps/energytype 			Mono
-    /gate/source/AS5/gps/monoenergy 			0. MeV
-    /gate/source/AS5/gps/angtype iso
-    /gate/source/AS5/gps/type Volume
-    /gate/source/AS5/gps/shape Sphere
-    /gate/source/AS5/gps/radius 1.4 cm
+    /gate/source/AS5/gps/ene/type 			Mono
+    /gate/source/AS5/gps/ene/mono 			0. MeV
+    /gate/source/AS5/gps/ang/type iso
+    /gate/source/AS5/gps/pos/type Volume
+    /gate/source/AS5/gps/pos/shape Sphere
+    /gate/source/AS5/gps/pos/radius 1.4 cm
     /gate/source/AS5/attachTo MIS28
     /gate/source/AS5/setActivity 2000 kBq
 
@@ -81,12 +81,12 @@
     /gate/source/AS6/gps/ion 31 68 0 0
     /gate/source/AS6/setForcedUnstableFlag true
     /gate/source/AS6/setForcedHalfLife 4069.8 s
-    /gate/source/AS6/gps/energytype 			Mono
-    /gate/source/AS6/gps/monoenergy 			0. MeV
-    /gate/source/AS6/gps/angtype iso
-    /gate/source/AS6/gps/type Volume
-    /gate/source/AS6/gps/shape Sphere
-    /gate/source/AS6/gps/radius 1.85 cm
+    /gate/source/AS6/gps/ene/type 			Mono
+    /gate/source/AS6/gps/ene/mono 			0. MeV
+    /gate/source/AS6/gps/ang/type iso
+    /gate/source/AS6/gps/pos/type Volume
+    /gate/source/AS6/gps/pos/shape Sphere
+    /gate/source/AS6/gps/pos/radius 1.85 cm
     /gate/source/AS6/attachTo MIS37
     /gate/source/AS6/setActivity 5000 kBq
 
