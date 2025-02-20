@@ -1,6 +1,6 @@
 
 # GATE Monte Carlo script to simulate a generic PET scanner.
-@Philip Kalaitizidis
+@Philip Kalaitzidis
 
 ##To clone repo, type in terminal:
 git clone https://github.com/PhilipAlexanderK/MSFMC.git
