@@ -17,8 +17,8 @@
 /gate/WCC_Cont/vis/forceSolid 0
 /gate/WCC_Cont/vis/setColor blue
 
-/gate/WCC_BOX/daughters/name WCC_LOWLID
-/gate/WCC_BOX/daughters/insert cylinder
+/gate/world/daughters/name WCC_LOWLID
+/gate/world/daughters/insert cylinder
 /gate/WCC_LOWLID/setMaterial Plastic
 /gate/WCC_LOWLID/geometry/setRmax 12.25 cm
 /gate/WCC_LOWLID/geometry/setRmin 10.15 cm
@@ -27,8 +27,8 @@
 /gate/WCC_LOWLID/vis/setColor grey
 /gate/WCC_LOWLID/vis/forceSolid 0
 
-/gate/WCC_BOX/daughters/name WCC_HILID
-/gate/WCC_BOX/daughters/insert cylinder
+/gate/world/daughters/name WCC_HILID
+/gate/world/daughters/insert cylinder
 /gate/WCC_HILID/setMaterial Plastic
 /gate/WCC_HILID/geometry/setRmax 12.25 cm
 /gate/WCC_HILID/geometry/setRmin 0 cm
