@@ -1,4 +1,4 @@
-/gate/actor/addActor MuMapActor genMuMap128
+/gate/actor/addActor MuMapActor genMuMap
 /gate/actor/genMuMap/attachTo cylindricalPET
 /gate/actor/genMuMap/save output/mumap.mhd
 /gate/actor/genMuMap/setVoxelSize 0.2344 0.2344 0.1562 cm
