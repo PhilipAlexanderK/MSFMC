@@ -8,6 +8,6 @@
 /gate/physics/processList Initialized
 
 # Cuts
-/gate/physics/Gamma/SetCutInRegion PETcrystals 5 mm
-/gate/physics/Electron/SetCutInRegion PETcrystals 5 mm
-/gate/physics/Positron/SetCutInRegion PETcrystals 5 mm
+/gate/physics/Gamma/SetCutInRegion PETcrystal 5 mm
+/gate/physics/Electron/SetCutInRegion PETcrystal 5 mm
+/gate/physics/Positron/SetCutInRegion PETcrystal 5 mm
