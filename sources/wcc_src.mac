@@ -5,13 +5,14 @@
 /gate/source/wcc_src/setType backtoback
 /gate/source/wcc_src/setForcedUnstableFlag true
 /gate/source/wcc_src/setForcedHalfLife 6586.2 s
-/gate/source/wcc_src/gps/energytype 			Mono
-/gate/source/wcc_src/gps/monoenergy 			511. keV
-/gate/source/wcc_src/gps/angtype iso
-/gate/source/wcc_src/gps/type Volume
-/gate/source/wcc_src/gps/shape Cylinder
-/gate/source/wcc_src/gps/radius 9.75 cm
-/gate/source/wcc_src/gps/halfz 9.125 cm
+/gate/source/wcc_src/gps/ene/type 			Mono
+/gate/source/wcc_src/gps/ene/mono 			511. keV
+/gate/source/wcc_src/gps/ang/type iso
+/gate/source/wcc_src/gps/pos/type Volume
+/gate/source/wcc_src/gps/pos/shape Cylinder
+/gate/source/wcc_src/gps/pos/radius 9.75 cm
+/gate/source/wcc_src/gps/pos/halfz 9.125 cm
+
 /gate/source/wcc_src/setActivity 5 MBq
 
 /gate/source/wcc_src/attachTo WCC_Cont
