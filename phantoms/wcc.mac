@@ -14,7 +14,7 @@
 /gate/WCC_Cont/geometry/setRmin 0 cm
 /gate/WCC_Cont/geometry/setHeight 18.25 cm
 /gate/WCC_Cont/placement/setTranslation 0 0 -0.125 cm
-/gate/WCC_Cont/vis/forceSolid 0
+/gate/WCC_Cont/vis/forceSolid 1
 /gate/WCC_Cont/vis/setColor blue
 
 /gate/world/daughters/name WCC_LOWLID
