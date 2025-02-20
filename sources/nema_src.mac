@@ -96,18 +96,18 @@
     /gate/source/BKG/gps/ion 31 68 0 0
     /gate/source/BKG/setForcedUnstableFlag true
     /gate/source/BKG/setForcedHalfLife 4069.8 s 
-    /gate/source/BKG/gps/energytype Mono
-    /gate/source/BKG/gps/monoenergy 			0. MeV
-    /gate/source/BKG/gps/type Volume
-    /gate/source/BKG/gps/shape Para
-    /gate/source/BKG/gps/halfx 15.0 cm
-    /gate/source/BKG/gps/halfy 12.0 cm
-    /gate/source/BKG/gps/halfz 15.0 cm
-    /gate/source/BKG/gps/paralp 0 deg
-    /gate/source/BKG/gps/parthe 0 deg
-    /gate/source/BKG/gps/parphi 0 deg
-    /gate/source/BKG/gps/centre 0.0 0.0 3.0 cm 
-    /gate/source/BKG/gps/angtype iso
+    /gate/source/BKG/gps/ene/type Mono
+    /gate/source/BKG/gps/ene/mono 			0. MeV
+    /gate/source/BKG/gps/pos/type Volume
+    /gate/source/BKG/gps/pos/shape Para
+    /gate/source/BKG/gps/pos/halfx 15.0 cm
+    /gate/source/BKG/gps/pos/halfy 12.0 cm
+    /gate/source/BKG/gps/pos/halfz 15.0 cm
+    /gate/source/BKG/gps/pos/paralp 0 deg
+    /gate/source/BKG/gps/pos/parthe 0 deg
+    /gate/source/BKG/gps/pos/parphi 0 deg
+    /gate/source/BKG/gps/pos/centre 0.0 0.0 3.0 cm 
+    /gate/source/BKG/gps/ang/type iso
     /gate/source/BKG/setActivity 0 kBq
 
     /gate/source/BKG/gps/Forbid NEMA_BOX_phys
