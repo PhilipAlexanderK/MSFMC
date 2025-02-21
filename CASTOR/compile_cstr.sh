@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Compile CASToR.
-unzip 
+unzip castor_v3.2.1.zip
+
 
 
