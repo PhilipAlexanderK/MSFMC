@@ -15,13 +15,15 @@
 /gate/world/geometry/setZLength 100 cm
 
 # Visualization
-/control/execute mac/visualization.mac
+#/control/execute mac/visualization.mac
 
 # Define PET geometry.
 /control/execute mac/PET_geom.mac
 
 # Define phantom.
-/control/execute phantoms/wcc.mac
+#/control/execute phantoms/wcc.mac
+#/control/execute phantoms/nema.mac
+#/control/execute Voxelized_Phantom_Source/VoxelizedPhantom.mac
 
 # Define the physics and cuts.
 /control/execute mac/physics_L.mac
@@ -29,7 +31,7 @@
 
 # Define actors.
 /control/execute mac/simstat.mac
-/control/execute mac/mumap.mac
+#/control/execute mac/mumap.mac
 
 # Rebuild geometry
 /gate/geometry/rebuild
@@ -41,15 +43,17 @@
 /control/execute mac/digitizer.mac
 
 # Define source
-/control/execute sources/wcc_src.mac
+#/control/execute sources/wcc_src.mac
+#/control/execute sources/nema_src.mac
+#/control/execute Voxelized_Phantom_Source/VoxelizedSource.mac
 
 # Define output
 /control/execute mac/output.mac
 
 # Acquisition settings.
-/gate/application/setTimeSlice 1 s
+/gate/application/setTimeSlice 5 s
 /gate/application/setTimeStart 0 s
-/gate/application/setTimeStop  1 s
+/gate/application/setTimeStop  5 s
 
 # Start acquisition
 #/gate/application/startDAQ
