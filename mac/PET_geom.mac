@@ -1,15 +1,16 @@
 # GATE cylindrical PET system hierarchy
 # World
 #     |_ cylindricalPET
-#                     |_Module
-#                            |_Submodule
-#                                      |_Crystal
-#                                              |_ LayerX
+#                     |_RSector
+#                             |_Module
+#                                     |_Submodule
+#                                               |_Crystal
+#                                                       |_ LayerX
 
 # Cylinder
 /gate/world/daughters/name cylindricalPET
 /gate/world/daughters/insert cylinder
-/gate/cylindricalPET/setMaterial LSO
+/gate/cylindricalPET/setMaterial Air
 /gate/cylindricalPET/geometry/setRmax 35 cm
 /gate/cylindricalPET/geometry/setRmin 30 cm
 /gate/cylindricalPET/geometry/setHeight 20 cm
@@ -18,9 +19,23 @@
 /gate/cylindricalPET/vis/setColor black
 /gate/cylindricalPET/vis/setVisible 1
 
-# Module
-/gate/cylindricalPET/daughters/name PETmodule
+# Rsector
+/gate/cylindricalPET/daughters/name PETrsector
 /gate/cylindricalPET/daughters/insert box
+/gate/PETrsector/setMaterial Air
+/gate/PETrsector/geometry/setXLength 3 cm
+/gate/PETrsector/geometry/setYLength 6 cm
+/gate/PETrsector/geometry/setZLength 20 cm
+/gate/PETrsector/vis/forceWireframe 1
+/gate/PETrsector/vis/forceSolid 0
+/gate/PETrsector/vis/setColor blue
+/gate/PETrsector/vis/setVisible 1
+
+/gate/PETrsector/placement/setTranslation 32.5 0 0 cm
+
+# Module
+/gate/PETrsector/daughters/name PETmodule
+/gate/PETrsector/daughters/insert box
 /gate/PETmodule/setMaterial Air
 /gate/PETmodule/geometry/setXLength 3 cm
 /gate/PETmodule/geometry/setYLength 6 cm
@@ -30,7 +45,6 @@
 /gate/PETmodule/vis/setColor blue
 /gate/PETmodule/vis/setVisible 1
 
-/gate/PETmodule/placement/setTranslation 32.5 0 0 cm
 
 # Submodule
 /gate/PETmodule/daughters/name PETsmod
@@ -59,7 +73,7 @@
 # Layer
 /gate/PETcrystal/daughters/name PETlayer
 /gate/PETcrystal/daughters/insert box
-/gate/PETlayer/setMaterial Air
+/gate/PETlayer/setMaterial LYSO
 /gate/PETlayer/geometry/setXLength 3 cm
 /gate/PETlayer/geometry/setYLength 1 cm
 /gate/PETlayer/geometry/setZLength 1 cm
@@ -82,15 +96,23 @@
 /gate/PETsmod/cubicArray/setRepeatNumberZ 5
 /gate/PETsmod/cubicArray/setRepeatVector 0 2 4 cm
 
+# Repeaters mod
+/gate/PETmodule/repeaters/insert cubicArray
+/gate/PETmodule/cubicArray/setRepeatNumberX 1
+/gate/PETmodule/cubicArray/setRepeatNumberY 1
+/gate/PETmodule/cubicArray/setRepeatNumberZ 1
+/gate/PETmodule/cubicArray/setRepeatVector 0 0 0 cm
+
 # Repeaters module
-/gate/PETmodule/repeaters/insert ring
-/gate/PETmodule/ring/setRepeatNumber 32
-/gate/PETmodule/ring/setFirstAngle 0 deg
+/gate/PETrsector/repeaters/insert ring
+/gate/PETrsector/ring/setRepeatNumber 32
+/gate/PETrsector/ring/setFirstAngle 0 deg
 
 # Attach system
-/gate/systems/cylindricalPET/rsector/attach PETmodule
-/gate/systems/cylindricalPET/module/attach PETsmod
+/gate/systems/cylindricalPET/rsector/attach PETrsector
+/gate/systems/cylindricalPET/module/attach PETmodule
+/gate/systems/cylindricalPET/submodule/attach PETsmod
 /gate/systems/cylindricalPET/crystal/attach PETcrystal
 /gate/systems/cylindricalPET/layer0/attach PETlayer
 
-/gate/PETcrystal/attachCrystalSD
+/gate/PETlayer/attachCrystalSD
