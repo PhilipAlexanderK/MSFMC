@@ -1,0 +1,12 @@
+# 
+# V O X E L I Z E D  M A T R I X   H O F F M A N   B R A I N   P H A N T O M
+
+/gate/world/daughters/name hof_brain
+/gate/world/daughters/insert ImageRegularParametrisedVolume
+/gate/hof_brain/geometry/SetImage Voxelized_Phantom_Source/brain_phantom.h33
+/gate/hof_brain/geometry/setRangeToMaterialFile Voxelized_Phantom_Source/range_atten_brain.dat
+
+/gate/hof_brain/placement/setTranslation  0. 0. 0. mm
+/gate/hof_brain/placement/setRotationAxis 1 0 0
+/gate/hof_brain/placement/setRotationAngle 0 deg
+/gate/hof_brain/attachPhantomSD
